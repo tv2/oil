@@ -11,6 +11,12 @@ export function getSoiConsentData() {
   return soiCookie.opt_in ? soiCookie.consentData : undefined;
 }
 
+
+export function getSoiCustomConsents() {
+  let soiCookie = getSoiCookie();
+  return soiCookie.opt_in ? soiCookie.customPurposes : undefined;
+}
+
 /**
  * If the CPC is visible it returns the settings from the CPC,
  * otherwise '1' is returned for 'full tracking'
