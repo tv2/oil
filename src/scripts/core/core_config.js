@@ -169,10 +169,6 @@ export function getPoiGroupName() {
   return getConfigValue(OIL_CONFIG.ATTR_POI_GROUP_NAME, 'default');
 }
 
-export function getCookieDomain() {
-  return getConfigValue(OIL_CONFIG.ATTR_COOKIE_DOMAIN, '');
-}
-
 export function getCookieExpireInDays() {
   return getConfigValue(OIL_CONFIG.ATTR_COOKIE_EXPIRES_IN_DAYS, 31);
 }
