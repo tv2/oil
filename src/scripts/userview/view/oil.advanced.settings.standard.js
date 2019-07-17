@@ -7,7 +7,7 @@ import { JS_CLASS_BUTTON_OPTIN, OIL_GLOBAL_OBJECT_NAME } from '../../core/core_c
 import { setGlobalOilObject } from '../../core/core_utils';
 import { getCustomVendorList, getPurposes, getVendorList, getVendorsToDisplay } from '../../core/core_vendor_lists';
 import { BackButton, YesButton } from './components/oil.buttons';
-import { setPendingPurpose } from '../../core/core_pending_purposes';
+import { setPendingPurposes, setPendingPurpose } from '../../core/core_pending_purposes';
 
 const CLASS_NAME_FOR_ACTIVE_MENU_SECTION = 'as-oil-cpc__category-link--active';
 
@@ -200,12 +200,14 @@ function activateAll() {
   let elements = document.querySelectorAll('.as-js-purpose-slider');
   forEach(elements, (domNode) => {
     domNode && (domNode.checked = true);
+    setPendingPurpose(domNode.getAttribute('data-id'), true);
   });
 }
 
 export function deactivateAll() {
   forEach(document.querySelectorAll('.as-js-purpose-slider'), (domNode) => {
     domNode && (domNode.checked = false);
+    setPendingPurposes([]);
   });
 }
 
