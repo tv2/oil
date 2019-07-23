@@ -145,6 +145,12 @@ function attachUtilityFunctionsToWindowObject() {
     });
   });
 
+  setGlobalOilObject('renderOil', () => {
+    loadLocale(userview_modal => {
+      userview_modal.renderOil({});
+    });
+  });
+
   setGlobalOilObject('triggerOptIn', () => {
     loadLocale(userview_modal => {
       userview_modal.handleOptIn();
