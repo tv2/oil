@@ -167,7 +167,7 @@ const buildVendorListEntry = (element) => {
                   <span class='as-oil-third-party-name'>${element.name}</span>
               </span>
               <div class='as-oil-third-party-toggle-part' style='display: none;'>
-                <a class='as-oil-third-party-link' href='${element.policyUrl}'>${element.policyUrl}</a>
+                <a class='as-oil-third-party-link' href='${element.policyUrl}' target='_blank'>${element.policyUrl}</a>
               </div>
             </div>
           `;
