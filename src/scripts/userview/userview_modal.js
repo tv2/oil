@@ -249,7 +249,7 @@ function injectOilWrapperInDOM(wrapper) {
   removeOilWrapperFromDOM();
 
   // Insert OIL into DOM
-  document.body.insertBefore(wrapper, document.body.firstElementChild);
+  document.body.appendChild(wrapper);
   addOilHandlers(getOilDOMNodes());
 }
 
