@@ -109,7 +109,7 @@ function handleOptInBtn() {
   sendEventToHostSite(EVENT_NAME_OPT_IN_BUTTON_CLICKED);
   handleOptIn();
 }
-export function handleOptIn(opts) {
+export function handleOptIn() {
   stopTimeOut();
   if (isPoiActive()) {
     import('../poi-list/poi.group.list.js').then(poi_group_list => {
@@ -118,7 +118,7 @@ export function handleOptIn(opts) {
       });
     });
   } else {
-    (handleSoiOptIn(opts)).then(onOptInComplete);
+    (handleSoiOptIn()).then(onOptInComplete);
   }
   animateOptInButton();
 }
@@ -312,8 +312,8 @@ function animateOptInButton() {
   }
 }
 
-function handleSoiOptIn(opts) {
-  let privacySetting = opts || getPrivacySettings();
+function handleSoiOptIn() {
+  let privacySetting = getPrivacySettings();
   logInfo('Handling SOI with settings: ', privacySetting);
   trackPrivacySettings(privacySetting);
 
