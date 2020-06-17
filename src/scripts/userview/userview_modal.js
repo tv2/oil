@@ -109,7 +109,7 @@ export function oilShowPreferenceCenter() {
     .catch((error) => logError(error));
 }
 
-export function handleOptIn() {
+export function handleOptIn(params) {
   if (isPoiActive()) {
     import('../poi-list/poi.group.list.js').then(poi_group_list => {
       poi_group_list.getGroupList().then(() => {
@@ -117,7 +117,7 @@ export function handleOptIn() {
       });
     });
   } else {
-    (handleSoiOptIn()).then(onOptInComplete);
+    (handleSoiOptIn(params)).then(onOptInComplete);
   }
   animateOptInButton();
 }
@@ -308,8 +308,8 @@ function animateOptInButton() {
   }
 }
 
-function handleSoiOptIn() {
-  let privacySetting = getPrivacySettings();
+function handleSoiOptIn(params) {
+  let privacySetting = params || getPrivacySettings();
   logInfo('Handling SOI with settings: ', privacySetting);
   trackPrivacySettings(privacySetting);
 

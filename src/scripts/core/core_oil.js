@@ -151,9 +151,9 @@ function attachUtilityFunctionsToWindowObject() {
     });
   });
 
-  setGlobalOilObject('triggerOptIn', () => {
+  setGlobalOilObject('triggerOptIn', (params) => {
     loadLocale(userview_modal => {
-      userview_modal.handleOptIn();
+      userview_modal.handleOptIn(params);
     });
   });
 
